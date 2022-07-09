@@ -15,6 +15,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $fields = ['id', 'name', 'bdate', 'gender', 'salary'];
+        //using fields array in order to return only the important fields
         return employee::get($fields);
     }
 

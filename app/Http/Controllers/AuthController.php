@@ -41,14 +41,13 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
+        //trying to authenticate the user based on recieved data
         if (Auth::attempt($credentials)) {
             session()->regenerate();
             $user = auth()->user();
-            $done = [
-                'user' => auth()->user(),
-                'token' => $user->createToken('token')->plainTextToken,
-            ];
-            return response($done, 200);
+            $token = $user->createToken('token')->plainTextToken;
+
+            return response($token, 200);
         } else {
             return response("Unsuccessfull Attempt", 401);
         }

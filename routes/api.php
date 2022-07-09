@@ -1,11 +1,8 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisterController;
+
 use App\Http\Controllers\AuthController;
-use App\Models\employee;
 use App\Http\Controllers\EmployeeController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
